@@ -1,10 +1,9 @@
-import { Button } from "../lib/main";
+import { Button } from "./components/Button";
 
 function App() {
   return (
     <div>
-      Hello World
-      <Button>123123</Button>
+      <Button>qdqwdqdq</Button>
     </div>
   );
 }

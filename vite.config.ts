@@ -1,44 +1,26 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
-import { libInjectCss } from "vite-plugin-lib-inject-css";
-import { extname, relative, resolve } from "path";
-import { fileURLToPath } from "node:url";
-import { glob } from "glob";
-import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
+import path from "path";
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    react(),
-    libInjectCss(),
-    dts({ include: ["lib"] }),
-    vanillaExtractPlugin(),
-  ],
   build: {
     lib: {
-      entry: resolve(__dirname, "lib/main.ts"),
-      formats: ["es"],
+      entry: path.resolve(__dirname, "index.ts"),
+      name: "off-design-system",
+      fileName: (format) => `index.${format}.js`,
     },
-    copyPublicDir: false,
     rollupOptions: {
-      external: ["react", "react/jsx-runtime"],
-      input: Object.fromEntries(
-        glob.sync("lib/**/*.{ts,tsx}").map((file) => {
-          return [
-            // The name of the entry point
-            // lib/nested/foo.ts becomes nested/foo
-            relative("lib", file.slice(0, file.length - extname(file).length)),
-            // The absolute path to the entry file
-            // lib/nested/foo.ts becomes /project/lib/nested/foo.ts
-            fileURLToPath(new URL(file, import.meta.url)),
-          ];
-        })
-      ),
+      external: ["react", "react-dom"],
       output: {
-        assetFileNames: "assets/[name][extname]",
-        entryFileNames: "[name].js",
+        globals: {
+          react: "React",
+          "react-dom": "ReactDOM",
+        },
       },
     },
+    sourcemap: true,
+    emptyOutDir: true,
   },
+  plugins: [react(), dts()],
 });
