@@ -1,5 +1,7 @@
+import JGButton from "./components/buttons/JGButton";
+
 function App() {
-  return <div className="bg-teal-300">test</div>;
+  return <JGButton>jgjgill</JGButton>;
 }
 
 export default App;
