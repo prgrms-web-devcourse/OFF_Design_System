@@ -7,7 +7,7 @@
     "url": "https://github.com/prgrms-web-devcourse/OFF_Design_System.git"
   },
   "private": false,
-  "version": "0.0.25",
+  "version": "0.0.26",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build && npm run tailwind",
