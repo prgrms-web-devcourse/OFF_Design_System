@@ -16,7 +16,7 @@
 
   # Commit the changes
   git add .
-  git commit -m "RELEASE (serif) : new release $new_version"
+  git commit -m "release: new release $new_version"
 
   # Inform the user
   echo "Released $new_version"
