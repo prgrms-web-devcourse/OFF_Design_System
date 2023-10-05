@@ -1,7 +1,23 @@
 {
   "name": "off-design-system",
+  "description": "오프 디자인 시스템",
+  "homepage": "https://github.com/prgrms-web-devcourse/OFF_Design_System",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prgrms-web-devcourse/OFF_Design_System.git"
+  },
   "private": false,
-  "version": "0.0.18",
+  "version": "0.0.20",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build && npm run tailwind",
+    "tailwind": "npx tailwindcss -o ./dist/index.css --minify",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "release": "sh ./scripts/release.sh"
+  },
   "type": "module",
   "main": "dist/index.es.js",
   "types": "dist/index.d.ts",
@@ -20,15 +36,38 @@
   "publishConfig": {
     "access": "public"
   },
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build && npm run tailwind",
-    "tailwind": "npx tailwindcss -o ./dist/index.css --minify",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
-  },
+  "keywords": [
+    "react",
+    "typescript",
+    "tailwindcss",
+    "ui",
+    "components",
+    "storybook",
+    "vite"
+  ],
+  "contributors": [
+    {
+      "name": "Jonggil Lee",
+      "email": "dbdltm22@naver.com",
+      "url": "https://github.com/jgjgill"
+    },
+    {
+      "name": "Beomjin Lee",
+      "email": "maplestory1419@naver.com",
+      "url": "https://github.com/euan-lee"
+    },
+    {
+      "name": "Jonghyun Lee",
+      "email": "whdgus7578@naver.com",
+      "url": "https://github.com/jonghyunlee95"
+    },
+    {
+      "name": "Jiseon Lim",
+      "email": "dpf226@naver.com",
+      "url": "https://github.com/Lim-JiSeon"
+    }
+  ],
+  "license": "MIT",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
