@@ -10,5 +10,5 @@ export default meta;
 type Story = StoryObj<typeof JGButton>;
 
 export const Example: Story = {
-  render: () => <JGButton>jgjgill</JGButton>,
+  render: () => <JGButton>jgjgill - pr test!</JGButton>,
 };
