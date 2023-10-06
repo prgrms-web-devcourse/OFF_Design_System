@@ -1,6 +1,6 @@
 import JGButton from "./components/buttons/JGButton";
 import Avatar from "./components/common/Avatar/Avatar";
-import ImageUploader from "./components/uploads/ImageUploader";
+import ImageUploader from "./components/uploads/ImageUploader/ImageUploader";
 
 function App() {
   return (
