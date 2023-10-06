@@ -44,8 +44,9 @@ const ImageUploader = ({
     const reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = () => {
-      if (reader.readyState === 2 && typeof reader.result === "string")
+      if (reader.readyState === 2 && typeof reader.result === "string") {
         setImage(reader.result);
+      }
     };
   };
 
