@@ -1,5 +1,5 @@
 import JGButton from "./components/buttons/JGButton";
-import ImageUploader from "./components/uploads/ImageUploader";
+import ImageUploader from "./components/uploads/ImageUploader/ImageUploader";
 
 function App() {
   return (
