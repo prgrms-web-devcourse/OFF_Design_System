@@ -1,16 +1,21 @@
+import { twMerge } from "tailwind-merge";
+
 type TextareaPropsType = {
   size?: "small" | "medium" | "large";
   resize?: "horizontal" | "vertical" | "none";
+  error?: boolean;
 } & React.TextareaHTMLAttributes<HTMLTextAreaElement>;
 
 const Textarea = ({
   size = "medium",
   resize = "none",
+  error = false,
   value,
   className,
   ...props
 }: TextareaPropsType) => {
-  const textareaDefaults = "w-full outline-none border border-gray-300";
+  const textareaDefaults =
+    "w-full p-2 outline-none border border-gray-300 disabled:cursor-not-allowed";
 
   const textareaSizes = {
     small: "text-xs",
@@ -18,11 +23,15 @@ const Textarea = ({
     large: "text-xl",
   };
 
+  const classNames = twMerge(
+    textareaDefaults,
+    textareaSizes[size],
+    error && "border-red-300",
+    className
+  );
+
   return (
-    <textarea
-      className={`${textareaDefaults} ${textareaSizes[size]} ${className}`}
-      style={{ resize }}
-      {...props}>
+    <textarea className={classNames} style={{ resize }} {...props}>
       {value}
     </textarea>
   );
