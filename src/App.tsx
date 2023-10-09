@@ -7,7 +7,9 @@ function App() {
     <>
       <JGButton>jgjgill</JGButton>
       <ImageUploader />
-      <Badge className="bg-gray-200">asdasdasd</Badge>
+      <Badge variant="solid" colorScheme="primary">
+        Badge
+      </Badge>
     </>
   );
 }
