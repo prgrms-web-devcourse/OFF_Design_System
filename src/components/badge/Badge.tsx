@@ -14,6 +14,10 @@ const Badge = ({
 }: BadgePropsType) => {
   const badgeDefaults = "w-min p-0.5 rounded";
 
+  /**
+   * @todo 색상 관련 변경 필요
+   */
+
   const badgeColorSchemes = {
     primary: {
       bg: "bg-teal-300",
