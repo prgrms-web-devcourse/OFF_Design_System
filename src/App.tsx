@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <JGButton>jgjgill</JGButton>
-      <ImageUploader></ImageUploader>
+      <ImageUploader />
     </>
   );
 }
