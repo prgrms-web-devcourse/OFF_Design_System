@@ -1,8 +1,8 @@
-import { Meta, StoryObj } from '@storybook/react';
-import JGButton from './JGButton';
+import { Meta, StoryObj } from "@storybook/react";
+import JGButton from "./JGButton";
 
 const meta: Meta<typeof JGButton> = {
-  title: 'Components/JGButton',
+  title: "Mocks/JGButton",
   component: JGButton,
 };
 
