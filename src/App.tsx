@@ -7,8 +7,13 @@ function App() {
     <>
       <JGButton>jgjgill</JGButton>
       <ImageUploader></ImageUploader>
-      <Input />
-      <Input inputName='PASSWORD' inputType='password' placeholder='비밀번호' />
+      <Input
+        inputLabel='ID'
+        type='text'
+        placeholder='아이디'
+        style={{ color: 'blue' }}
+      />
+      <Input inputLabel='PASSWORD' type='password' placeholder='비밀번호' />
     </>
   );
 }
