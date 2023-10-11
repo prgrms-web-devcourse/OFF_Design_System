@@ -11,14 +11,14 @@ type Story = StoryObj<typeof Input>;
 
 export const Default: Story = {
   args: {
-    inputName: 'ID',
+    inputLabel: 'ID',
     inputType: 'text',
     placeholder: '아이디',
   },
 };
 
 Default.argTypes = {
-  inputName: {
+  inputLabel: {
     control: { type: 'text' },
   },
   inputType: {

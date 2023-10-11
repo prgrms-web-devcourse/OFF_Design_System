@@ -2,9 +2,10 @@ import { useRef, useState } from 'react';
 
 type InputPropsType = {
   inputLabel?: string;
+  inputType?: string;
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
-const Input = ({ inputLabel, style, ...props }: InputPropsType) => {
+const Input = ({ inputLabel, inputType, style, ...props }: InputPropsType) => {
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   const [inputValue, setInputValue] = useState('');
@@ -35,6 +36,7 @@ const Input = ({ inputLabel, style, ...props }: InputPropsType) => {
         <input
           className='mt-1 block w-60 px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500'
           ref={inputRef}
+          type={inputType}
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           style={style}
