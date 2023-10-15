@@ -36,12 +36,12 @@ const Avatar = ({
         <img src={src} className={`${shapeConfig[shape]}`} />
       ) : (
         <div
-          style={{ width: `${size}px`, height: `${size}px` }}
+          style={{ width: `${size}px`, height: `${size}px`, fontSize: `${size/2}px` }}
           className={`${
             avatarColorSchemes[color as keyof typeof avatarColorSchemes]
           } ${
             shapeConfig[shape]
-          } flex items-center justify-center font-bold overflow-hidden text-xl`}>
+          } flex items-center justify-center font-bold overflow-hidden`}>
           {name}
         </div>
       )}

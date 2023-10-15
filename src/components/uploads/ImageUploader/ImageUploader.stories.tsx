@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import ImageUploader from "./ImageUploader";
 
 const meta: Meta<typeof ImageUploader> = {
-  title: "Uploads/ImageUploader",
+  title: "Components/ImageUploader",
   component: ImageUploader,
 };
 
