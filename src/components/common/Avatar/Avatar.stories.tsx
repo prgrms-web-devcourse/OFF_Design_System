@@ -48,17 +48,17 @@ Example2.argTypes = {
   color: {
     control: {
       type: "select",
-      options: [
-        "red",
-        "orange",
-        "yellow",
-        "green",
-        "blue",
-        "purple",
-        "black",
-        "white",
-      ],
     },
+    options: [
+      "red",
+      "orange",
+      "yellow",
+      "green",
+      "blue",
+      "purple",
+      "black",
+      "white",
+    ],
   },
 };
 
