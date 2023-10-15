@@ -1,23 +1,17 @@
 type AvatarPropsType = {
-  src: string;
-  alt?: string;
+  name?: string;
+  src?: string;
   size?: number;
   shape?: "circle" | "rounded" | "square";
-  text?: string;
-  subText?: string;
-  textAlign?: "left" | "center" | "right";
-  textPosition?: "top" | "right" | "left" | "bottom";
+  color?: string;
 };
 
 const Avatar = ({
+  name = "TS",
   src,
-  alt = "image",
-  size = 100,
+  size = 50,
   shape = "circle",
-  text,
-  subText,
-  textAlign = "left",
-  textPosition = "right",
+  color = "blue",
 }: AvatarPropsType) => {
   const shapeConfig = {
     rounded: "rounded-lg",
@@ -25,40 +19,32 @@ const Avatar = ({
     square: "rounded-none",
   };
 
-  const textAlignConfig = {
-    left: "items-start",
-    right: "items-end",
-    center: "items-center",
-  };
-
-  const textPositionConfig = {
-    top: "flex-col-reverse",
-    bottom: "flex-col",
-    right: "flex-row",
-    left: "flex-row-reverse",
-  };
-
-  const textMarginConfig = {
-    top: "mb-3",
-    bottom: "mt-3",
-    right: "ml-3",
-    left: "mr-3",
+  const avatarColorSchemes = {
+    red: "bg-red-500 text-red-100",
+    orange: "bg-orange-500 text-orange-100",
+    yellow: "bg-yellow-500 text-yellow-100",
+    green: "bg-green-500 text-green-100",
+    blue: "bg-blue-500 text-blue-100",
+    purple: "bg-purple-500 text-purple-100",
+    black: "bg-stone-800 text-stone-100",
+    white: "bg-stone-100 text-stone-800",
   };
 
   return (
-    <div
-      className={`flex ${textPositionConfig[textPosition]} justify-center items-center`}>
-      <img
-        src={src}
-        alt={alt}
-        className={`${shapeConfig[shape]}`}
-        style={{ width: `${size}px`, height: `${size}px` }}
-      />
-      <div
-        className={`flex flex-col justify-center ${textAlignConfig[textAlign]} ${textMarginConfig[textPosition]}`}>
-        <div className="my-0.5">{text}</div>
-        <div className="my-0.5">{subText}</div>
-      </div>
+    <div style={{ width: `${size}px`, height: `${size}px` }}>
+      {src ? (
+        <img src={src} className={`${shapeConfig[shape]}`} />
+      ) : (
+        <div
+          style={{ width: `${size}px`, height: `${size}px` }}
+          className={`${
+            avatarColorSchemes[color as keyof typeof avatarColorSchemes]
+          } ${
+            shapeConfig[shape]
+          } flex items-center justify-center font-bold overflow-hidden text-xl`}>
+          {name}
+        </div>
+      )}
     </div>
   );
 };
