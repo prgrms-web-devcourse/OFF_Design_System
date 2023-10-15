@@ -10,7 +10,7 @@ yarn add off-design-system
 프로젝트 루트에 `index.css` 파일을 추가해주세요.
 
 ```tsx
-import "serif-ui-components/dist/index.css";
+import "off-design-system/dist/index.css";
 ```
 
 ```tsx
