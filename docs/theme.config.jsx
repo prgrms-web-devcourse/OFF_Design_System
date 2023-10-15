@@ -1,7 +1,7 @@
 export default {
-  logo: <span>My Nextra Documentation</span>,
+  logo: <span>OFF Design System</span>,
   project: {
-    link: "https://github.com/shuding/nextra",
+    link: "https://github.com/prgrms-web-devcourse/OFF_Design_System",
   },
   // ... other theme options
 };
