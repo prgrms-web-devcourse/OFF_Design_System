@@ -37,12 +37,14 @@ const Input = ({ inputLabel, inputType, style, ...props }: InputPropsType) => {
           {...props}
         />
         {inputValue.length > 0 && (
-          <img
-            className='mt-1 absolute cursor-pointer right-2 w-4'
-            src='./src/assets/close.svg'
-            alt='remove'
-            onClick={handleRemoveButtonClick}
-          />
+          <button className='absolute cursor-pointer right-3 w-4'>
+            <img
+              // className='w-4'
+              src='./src/assets/close.svg'
+              alt='remove'
+              onClick={handleRemoveButtonClick}
+            />
+          </button>
         )}
       </div>
     </>
