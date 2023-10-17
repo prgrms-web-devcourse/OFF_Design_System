@@ -2,37 +2,35 @@ import { Meta, StoryObj } from "@storybook/react";
 import Avatar from "./Avatar";
 
 const meta: Meta<typeof Avatar> = {
-  title: "Mocks/Avatar",
+  title: "Components/Avatar",
   component: Avatar,
 };
 
 export default meta;
 type Story = StoryObj<typeof Avatar>;
 
-export const Primary: Story = {
+export const Example1: Story = {
   args: {
     src: "https://picsum.photos/200/200",
-    alt: "image",
     size: 100,
     shape: "circle",
-    text: "닉네임",
-    subText: "안녕하세요.",
-    textAlign: "left",
-    textPosition: "right",
   },
 };
 
-Primary.argTypes = {
-  src: {
-    control: {
-      type: "text",
-      defaultValue: "https://picsum.photos/200/200",
-    },
+export const Example2: Story = {
+  args: {
+    name: "TS",
+    size: 100,
+    shape: "circle",
+    color: "blue",
   },
-  alt: {
+};
+
+Example2.argTypes = {
+  name: {
     control: {
       type: "text",
-      defaultValue: "image",
+      defaultValue: "TS",
     },
   },
   size: {
@@ -47,28 +45,40 @@ Primary.argTypes = {
       options: ["rounded", "circle", "square"],
     },
   },
-  text: {
-    control: {
-      type: "text",
-      defaultValue: "text",
-    },
-  },
-  subText: {
-    control: {
-      type: "text",
-      defaultValue: "subText",
-    },
-  },
-  textAlign: {
+  color: {
     control: {
       type: "select",
-      options: ["left", "center", "right"],
+    },
+    options: [
+      "red",
+      "orange",
+      "yellow",
+      "green",
+      "blue",
+      "purple",
+      "black",
+      "white",
+    ],
+  },
+};
+
+Example1.argTypes = {
+  src: {
+    control: {
+      type: "text",
+      defaultValue: "https://picsum.photos/200/200",
     },
   },
-  textPosition: {
+  size: {
+    control: {
+      type: "number",
+      defaultValue: 100,
+    },
+  },
+  shape: {
     control: {
       type: "select",
-      options: ["top", "right", "left", "bottom"],
+      options: ["rounded", "circle", "square"],
     },
   },
 };
