@@ -13,7 +13,7 @@ const Avatar = ({
   shape = "circle",
   color = "blue",
 }: AvatarPropsType) => {
-  const shapeConfig = {
+  const avatarShape = {
     rounded: "rounded-lg",
     circle: "rounded-full",
     square: "rounded-none",
@@ -33,14 +33,18 @@ const Avatar = ({
   return (
     <div style={{ width: `${size}px`, height: `${size}px` }}>
       {src ? (
-        <img src={src} className={`${shapeConfig[shape]}`} />
+        <img src={src} className={`${avatarShape[shape]}`} />
       ) : (
         <div
-          style={{ width: `${size}px`, height: `${size}px`, fontSize: `${size/2}px` }}
+          style={{
+            width: `${size}px`,
+            height: `${size}px`,
+            fontSize: `${size / 2}px`,
+          }}
           className={`${
             avatarColorSchemes[color as keyof typeof avatarColorSchemes]
           } ${
-            shapeConfig[shape]
+            avatarShape[shape]
           } flex items-center justify-center font-bold overflow-hidden`}>
           {name}
         </div>
