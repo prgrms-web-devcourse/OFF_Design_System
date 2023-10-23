@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 
 type InputPropsType = {
   inputLabel?: string;
-  inputType?: string;
+  inputType?: 'text' | 'password';
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
 const Input = ({ inputLabel, inputType, style, ...props }: InputPropsType) => {
@@ -11,17 +11,11 @@ const Input = ({ inputLabel, inputType, style, ...props }: InputPropsType) => {
   const [inputValue, setInputValue] = useState('');
 
   const handleLabelClick = () => {
-    if (inputRef.current) {
-      inputRef.current.focus();
-    }
+    if (inputRef.current) inputRef.current.focus();
   };
 
   const handleRemoveButtonClick = () => {
     setInputValue('');
-
-    if (inputRef.current) {
-      inputRef.current.focus();
-    }
   };
 
   return (
@@ -44,8 +38,8 @@ const Input = ({ inputLabel, inputType, style, ...props }: InputPropsType) => {
         />
         {inputValue.length > 0 && (
           <img
-            className='mt-1 absolute cursor-pointer right-2'
-            src='src/assets/close.svg'
+            className='mt-1 absolute cursor-pointer right-2 w-4'
+            src='./src/assets/close.svg'
             alt='remove'
             onClick={handleRemoveButtonClick}
           />
